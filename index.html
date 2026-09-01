@@ -1,27 +1,68 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
   <title>CETAK SUKET</title>
-  <link rel="icon" type="image/png" href="https://drive.google.com/uc?export=view&id=19l75y6-iC_CqnBE_AbUyAhUdrFY6Lb4C">
-  <link rel="apple-touch-icon" href="https://drive.google.com/uc?export=view&id=19l75y6-iC_CqnBE_AbUyAhUdrFY6Lb4C">
-</head>
-<body>
-  <iframe 
-    src="https://script.google.com/macros/s/AKfycbwIkjk319983rp_egaBZQqC_MJ8q3rMGu7zjqMQf5yd8Un_WBlehA3_Su2yRDoNHJ98Sw/exec"
-    width="100%"
-    height="100%"
-    allowfullscreen="true"
-    style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; border: none;">
-  </iframe>
 
-  <script>
-    window.onload = function() {
-      document.querySelector('iframe')
-        .requestFullscreen()
-        .catch((err) => {
-          console.error('Error attempting to enable full-screen mode:', err.message);
-        });
-    };
-  </script>
+  <link rel="icon"
+        href="https://drive.google.com/file/d/1QPwSub_UmSnP4DQ8FyuQAXYSaTXJwviG"
+        type="image/x-icon">
+
+  <style>
+    /* Reset agar iframe benar-benar memenuhi viewport */
+    html, body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    body {
+      min-height: 100dvh;
+    }
+
+    .iframe-wrapper {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100dvh;
+      height: 100svh;
+      height: 100dvh;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    #suketFrame {
+      display: block;
+      width: 100%;
+      height: 100%;
+      min-height: 0;
+      border: 0;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Fallback untuk browser lama yang belum mendukung dvh */
+    @supports not (height: 100dvh) {
+      .iframe-wrapper {
+        height: 100vh;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="iframe-wrapper">
+    <iframe
+      id="suketFrame"
+      src="https://script.google.com/macros/s/AKfycbwIkjk319983rp_egaBZQqC_MJ8q3rMGu7zjqMQf5yd8Un_WBlehA3_Su2yRDoNHJ98Sw/exec"
+      title="CETAK SUKET"
+      allowfullscreen>
+    </iframe>
+  </main>
 </body>
 </html>
